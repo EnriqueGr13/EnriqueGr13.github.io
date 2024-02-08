@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto con Dataframe-js</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#introduccion" class="nav-button">Introducción</a></li>
+                    <li class="hidden"><a href="#graficas">Gráficas</a></li>
+                    <li class="hidden"><a href="#tablas">Tablas</a></li>
+                    <li><a href="#about-me">About Me</a></li>
+                    <li><a href="Proyecto final EGR/index.html">Exit</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section id="file-uploader">
+            <h2>Cargar Archivo CSV</h2>
+            <div id="file-drop-area">
+                <p>Selecciona o arrastra un fichero para procesarlo y poder seguir operando con la página web</p>
+                <input type="file" id="file-input" hidden accept=".csv" />
+                <label for="file-input" class="file-drag-label">
+                    Arrastra archivos aquí o haz clic para seleccionar
+                </label>
+            </div>
+        </section>
+
+        <section id="introduccion" class="info-sections">
+            <div class="info-box" id="graficas-box">
+                <a href="#graficas">Gráficas</a>
+                <p>En esta sección se pueden mostrar todos los datos de las gráficas.</p>
+                <img src="../imgs/graficas.png" alt="Gráficas" class="info-image">
+            </div>
+            <div class="info-box" id="tablas-box">
+                <a href="#tablas">Tablas</a>
+                <p>En esta sección se pueden ver las tablas de las gráficas.</p>
+                <img src="../imgs/tablas.png" alt="Tablas" class="info-image">
+            </div>
+            <div class="info-box" id="about-me-box">
+                <a href="#about-me">About Me</a>
+                <p>En esta sección puedes descubrir más sobre mí y mis motivaciones.</p>
+                <img src="../imgs/aboutme.png" alt="About Me" class="info-image">
+            </div>
+            <div class="info-box" id="exit-box">
+                <a href="#exit">Exit</a>
+                <p>Puedes salir de la página web aquí.</p>
+                <img src="../imgs/exit.png" alt="Exit" class="info-image">
+            </div>
+        </section>
+
+        <!-- Slider para Gráficas -->
+        <section id="slider-graficas" class="hidden">
+            <p>Selecciona el rango de los años:</p>
+            <input type="range" id="slider-grafica" min="2009" max="2024" value="2009" oninput="document.getElementById('valor-slider-grafica').textContent=value">
+            <p>Año seleccionado: <span id="valor-slider-grafica">2009</span></p>
+        </section>
+
+        <!-- Secciones para gráficas y tablas -->
+        <section id="graficas" class="hidden">
+            <h2>Gráficas</h2>
+            <div id="grafica-lineal"></div> <!-- Contenedor para la gráfica de líneas -->
+            <div id="grafica-agrupada"></div> <!-- Contenedor para la gráfica agrupada por año -->
+        </section>
+
+        <!-- Slider para Tablas -->
+        <section id="slider-tablas" class="hidden">
+            <p>Selecciona el rango de los años:</p>
+            <input type="range" id="slider-tabla" min="2009" max="2024" value="2009" oninput="document.getElementById('valor-slider-tabla').textContent=value">
+            <p>Año seleccionado: <span id="valor-slider-tabla">2009</span></p>
+        </section>
+
+        <section id="tablas" class="hidden">
+            <h2>Tablas</h2>
+            <div id="tabla-total"></div> <!-- Contenedor para la tabla total -->
+            <div id="tabla-agrupada"></div> <!-- Contenedor para la tabla agrupada -->
+        </section>
+
+        <section id="about-me">
+            <h2>Sobre Mí</h2>
+            <p>Soy Enrique Gallén Roda, un entusiasta del Diseño de Interfaces Web con 20 años de edad, originario de Onda, Castellón. Mi camino en este campo empezó como un pasatiempo que se convirtió rápidamente en mi pasión y profesión. Fuera del ámbito digital, disfruto de la naturaleza, lo que me inspira a incorporar sostenibilidad en mis diseños.</p>
+            <img id="imgAbout" src="../imgs/aboutme.png" alt="About Me" class="info-image">
+            <div class="social-links">
+                <a href="https://twitter.com" target="_blank">
+                    <img src="../imgs/twitter.png" alt="Twitter" />
+                    Twitter
+                </a>
+                <a href="https://instagram.com" target="_blank">
+                    <img src="../imgs/instagram.png" alt="Instagram" />
+                    Instagram
+                </a>
+                <a href="https://github.com" target="_blank">
+                    <img src="../imgs/github.png" alt="GitHub" />
+                    GitHub
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#introduccion" class="nav-button">Introducción</a></li>
+                    <li class="hidden"><a href="#graficas">Gráficas</a></li>
+                    <li class="hidden"><a href="#tablas">Tablas</a></li>
+                    <li><a href="#about-me">About Me</a></li>
+                    <li><a href="Proyecto final EGR/index.html">Exit</a></li>
+                </ul>
+            </nav>
+            <div class="social-links">
+                <a href="https://twitter.com" target="_blank">
+                    <img src="../imgs/twitter.png" alt="Twitter" />
+                </a>
+                <a href="https://instagram.com" target="_blank">
+                    <img src="../imgs/instagram.png" alt="Instagram" />
+                </a>
+                <a href="https://github.com" target="_blank">
+                    <img src="../imgs/github.png" alt="GitHub" />
+                </a>
+            </div>
+        </div>
+        
+    </footer>
+    
+    <script src="https://unpkg.com/dataframe-js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

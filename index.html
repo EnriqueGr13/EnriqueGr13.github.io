@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <link rel="stylesheet" href="formulario/styleFormulario.css">
+</head>
+<body>
+    <section class="form-register">
+        <h4>Formulario Registro</h4>
+        <div id="errorcase" class="errorcase"></div>
+        <form class="form-register">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" class="controls" placeholder="Ingresa tu nombre">
+
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" class="controls" placeholder="Ingresa tus apellidos">
+
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" class="controls" placeholder="Ingresa tu edad">
+
+            <label for="sexo">Sexo:</label>
+            <select id="sexo" class="controls">
+                <option value="">Selecciona tu sexo</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Otro">Otro</option>
+            </select>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" class="controls" placeholder="Ingresa tu email">
+
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" id="contraseña" class="controls" placeholder="Ingresa tu contraseña">
+
+            <div class="submit-container">
+                <button class="botons" type="button" onclick="validar()">Iniciar Sesión</button>
+                <span class="icon"></span>
+            </div>
+        </form>
+    </section>
+
+    <script src="formulario/scriptFormulario.js"></script>
+</body>
+</html>
