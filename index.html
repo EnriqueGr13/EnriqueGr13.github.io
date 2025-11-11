@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival de Sueños Compartidos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mada:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Macondo:wght@400&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/image_a04cde4c.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Mada', Tahoma, sans-serif;
+            background-color: #fffffe;
+            color: #000001;
+            margin: 0;
+            padding: 0;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fffffe;
+        }
+
+        .header-top {
+            padding: 11px 59px 6.5px;
+            font-size: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .view-browser {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .main-content {
+            background-color: #ffedff;
+            padding: 42px 60px;
+        }
+
+        .festival-title {
+            text-align: center;
+            margin-bottom: 26px;
+        }
+
+        .festival-title img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .info-items {
+            margin: 16px 0 26px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 5px;
+            padding-left: 96px;
+        }
+
+        .info-item img {
+            width: 24px;
+            height: 24px;
+            margin-right: 3px;
+        }
+
+        .info-text {
+            font-size: 18px;
+            font-weight: 700;
+            color: #4b0048;
+            line-height: 23px;
+        }
+
+        .connect-button {
+            text-align: center;
+            margin: 16px 0 56px;
+        }
+
+        .connect-button table {
+            background: url('assets/image_a629f1ff.png') 50% / 100% no-repeat;
+            width: 245px;
+            height: 58px;
+            margin: 0 auto;
+        }
+
+        .connect-button p {
+            font-size: 18px;
+            font-weight: 600;
+            color: #240046;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .connect-button p:hover{
+            transition: all 0.2s ease-in-out;
+            color: #6d4368;
+        }
+
+        .description {
+            font-size: 20px;
+            line-height: 25px;
+            text-align: left;
+            margin: 16px 5px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 16px 0;
+            font-family: 'Mada', Tahoma, sans-serif;
+            font-size: 36px;
+            color: #4b0048;
+            font-weight: bold;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin: 16px 0 60px;
+        }
+
+        .feature-item {
+            display: flex;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border: 0.5px solid #4b0048;
+        }
+
+        .feature-image {
+            background-color: white;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 113px;
+        }
+
+        .feature-image img {
+            max-width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .feature-content {
+            background-color: #6d4368;
+            padding: 35px 20px;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .feature-content p {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fffffe;
+            line-height: 1.2;
+        }
+
+        .feature-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .feature-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .profiles-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin: 16px 0 16px;
+        }
+
+        .profile-card {
+            position: relative;
+            width: 210px;
+            height: 256px;
+            background-size: cover;
+            margin: 0px 16px;
+        }
+
+        .profile-info {
+            position: absolute;
+            bottom: 0;
+            left: 4px;
+            right: 4px;
+            background-color: #dfc1df;
+            border-radius: 0 0 20px 20px;
+            border: 0.5px solid black;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            padding: 9px;
+            height: 120px;
+        }
+
+        .profile-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #4b0048;
+            margin-bottom: 4px;
+        }
+
+        .profile-description {
+            font-size: 12px;
+            font-weight: 500;
+            color: #4b0048;
+        }
+
+        .lineup-button {
+            text-align: center;
+            margin: 16px 0 59px;
+        }
+
+        .lineup-button table {
+            background: url('assets/image_233ceaf3.png') 50% / 100% no-repeat;
+            width: 246px;
+            height: 58px;
+            margin: 0 auto;
+        }
+
+        .lineup-button p {
+            font-size: 18px;
+            font-weight: 600;
+            color: #10002b;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .lineup-button p:hover{
+            transition: all 0.2s ease-in-out;
+            color: #6d4368;
+        }
+
+        .participation {
+            margin: 16px 0;
+        }
+
+        .participation-buttons {
+            display: flex;
+            gap: 40px;
+            margin-top: 13px;
+        }
+
+        .participation-button {
+            flex: 1;
+            height: 40px;
+            border-radius: 216px 0 0 0;
+            background-color: #4b0048;
+            overflow: hidden;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .participation-button:last-child {
+            border-radius: 0 0 200px 0;
+        }
+
+        .button-inner {
+            background-color: #6d4368;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .button-inner:hover{
+            transition: all 0.2s ease-in-out;
+            background-color: #10002b;
+        }
+
+        .button-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: #fffac9;
+        }
+
+        .footer {
+            padding: 16px 59px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .footer-info p {
+            font-size: 15px;
+            line-height: 20px;
+        }
+
+        .footer-info p:first-child {
+            font-weight: 600;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .social-icons img {
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            font-size: 15px;
+        }
+
+        .unsubscribe {
+            font-weight: 700;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            .email-container {
+                max-width: 360px;
+            }
+
+            .header-top {
+                padding: 17px 9px 3.5px;
+            }
+
+            .main-content {
+                padding: 28px 10px;
+            }
+
+            .info-item {
+                padding-left: 55px;
+            }
+
+            .info-text {
+                font-size: 14px;
+                line-height: 24px;
+            }
+
+            .connect-button table {
+                width: 241px;
+                height: 57px;
+            }
+
+            .description {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .feature-image {
+                width: 80px;
+                padding: 11px;
+            }
+
+            .profiles-grid {
+                grid-template-columns: 1fr;
+                justify-items: center;
+                gap: 10px;
+            }
+
+            .participation-buttons {
+                flex-direction: column;
+                gap: 2px;
+                height: 60px;
+            }
+
+            .button-text {
+                font-size: 14px;
+            }
+
+            .footer {
+                padding: 14px 15px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+            }
+
+            .social-icons {
+                margin-top: 16px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+            }
+
+            .unsubscribe {
+                margin-top: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .info-item {
+                padding-left: 20px;
+            }
+            
+            .profile-card {
+                width: 100%;
+                max-width: 210px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header-top">
+            <div>Donde tus sueños se conectan</div>
+            <div class="view-browser">View in browser</div>
+        </div>
+
+        <div class="main-content">
+            <div class="festival-title">
+                <img src="assets/image_2042eda2.png" alt="Festival de sueños compartidos">
+            </div>
+
+            <div class="info-items">
+                <div class="info-item">
+                    <img src="assets/image_eac145b1.png" alt="Calendar">
+                    <div class="info-text">Del 10 al 13 de agosto de 2085</div>
+                </div>
+                <div class="info-item">
+                    <img src="assets/image_3051d7e3.png" alt="Platform">
+                    <div class="info-text">Plataforma de Sueños Colectivos</div>
+                </div>
+                <div class="info-item">
+                    <img src="assets/image_90f4917e.png" alt="Neural">
+                    <div class="info-text">Acceso mediante pulsera neural</div>
+                </div>
+            </div>
+
+            <div class="connect-button">
+                <table>
+                    <tr>
+                        <td>
+                            <p>Conéctate al sueño<br>compartido</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="description">
+                Abrimos las puertas del festival de sueños compartidos 2085. Este año, exploramos los límites de la imaginación colectiva y la conexión emocional a través del sueño. Participa en instalaciones inmersivas generadas en base a redes neuronales conectadas.
+            </div>
+
+            <div class="section-title">Destacado</div>
+
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-image">
+                        <img src="assets/image_aabac080.png" alt="El Jardín de las Mentes Dormidas">
+                    </div>
+                    <div class="feature-content">
+                        <p>El Jardín de las<br>Mentes Dormidas</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-content">
+                        <p>Sincronía<br>REM</p>
+                    </div>
+                    <div class="feature-image">
+                        <img src="assets/image_ab97c465.png" alt="Sincronía REM">
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-image">
+                        <img src="assets/image_2cd0061c.png" alt="Ética del Sueño Compartido">
+                    </div>
+                    <div class="feature-content">
+                        <p>Ética del Sueño<br>Compartido</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-content">
+                        <p>El eco de<br>tus pesadillas</p>
+                    </div>
+                    <div class="feature-image">
+                        <img src="assets/image_1fe1fad.png" alt="El eco de tus pesadillas">
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">Perfiles</div>
+
+            <div class="profiles-grid">
+                <div class="profile-card" style="background-image: url('assets/image_dc3f9cc5.png')">
+                    <div class="profile-info">
+                        <div class="profile-name">Lucía Lázuli</div>
+                        <div class="profile-description">
+                            Creadora de 'Sueños Transparentes', una instalación donde las emociones se transforman en colores flotantes.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-card" style="background-image: url('assets/image_b6e52d51.png')">
+                    <div class="profile-info">
+                        <div class="profile-name">Hiro Tanaka</div>
+                        <div class="profile-description">
+                            Músico cuántico que compone con datos cerebrales
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lineup-button">
+                <table>
+                    <tr>
+                        <td>
+                            <p>Explora el line-up<br>completo</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="participation">
+                <div class="section-title">Participación</div>
+
+                <div class="participation-buttons">
+                    <div class="participation-button">
+                        <div class="button-inner">
+                            <div class="button-text">Envía tu propio sueño</div>
+                        </div>
+                    </div>
+                    <div class="participation-button">
+                        <div class="button-inner">
+                            <div class="button-text">Newsletter exclusiva</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-top">
+                <div class="footer-info">
+                    <p>Newsletter: Festival de sueños compartidos</p>
+                    <p>por Enrique Gallén Roda</p>
+                </div>
+                <div class="social-icons">
+                    <img src="assets/image_df613f08.png" alt="Social Icon 1">
+                    <img src="assets/image_340c8998.png" alt="Social Icon 2">
+                    <img src="assets/image_48b0ea03.png" alt="Social Icon 3">
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>Términos de sueño - Política de descanso - Despertar seguro</div>
+                <div class="unsubscribe">Unsubscribe</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
